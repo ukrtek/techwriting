@@ -23,13 +23,13 @@ delay - value of time between intervals - ???
 
 
 #### 2.3 Public functions
-start(time: number, delay: number = 0)
+start(time: number, delay: number = 0): Ticker
 Creates and starts a ticker.
 Parameters:
 time - current time value within the ticker - ??
 delay - delay from starting point time to when  ticker is started
 
-startInterval(time: number, interval: number)
+startInterval(time: number, interval: number): Ticker
 Creates and starts a ticker object with specific intervals between ticks.
 Parameters:
 time - timestamp starting point time for the ticker
@@ -42,9 +42,15 @@ If the ticker has an end, also ends it.
 update(dt: number)
 Updates all started tickers and removes non-started.  
 
+destroy(ticker?: Ticker)
+blah
+
+destroyMany(tickers: Ticker[])
+blaah
 
 
 #### 2.3 Private functions
+_update(dt: number)
 
 
 
@@ -57,5 +63,7 @@ Some content there.<br>
 ? delay - delay from the starting point time to when ticker is started<br>
 - what is delay
 - what is the difference between 'stop' and 'end' events?
+
+
 
 
