@@ -12,55 +12,50 @@ Ticker can have interval, after each interval something happens.
 #### 2.1. Class Ticker overview
 Class Ticker provides the API to create new ticker objects and manage existing ones. 
 #### 2.2. Class fields
-tickers - List with all the tickers we are working with in the current session ???
-originalTime - timestamp when the ticker was created
-currentTime - current timestamp for the ticker  
-isStarted - indicates whether the ticker uses time intervals and a specific event is to occur after each interval (ex.: every 15 seconds)
-useIntervals - indicates whether the ticker uses time intervals and a specific event is to occur after each interval (ex.: every 15 seconds)
-originalInterval - 	order number (index) of initial time interval where the ticker started
-currentInterval - blah
-delay - value of time between intervals - ???
+`tickers`<br> List with all the tickers we are working with in the current session???<br>
+`originalTime`<br> timestamp when the ticker was created<br>
+`currentTime`<br> current timestamp for the ticker <br> 
+`isStarted`<br> indicates whether the ticker uses time intervals and a specific event is to occur after each interval (ex.: every 15 seconds)
+`useIntervals`<br> indicates whether the ticker uses time intervals and a specific event is to occur after each interval (ex.: every 15 seconds)
+`originalInterval<br> 	order number (index) of initial time interval where the ticker started
+`currentInterval<br> blah
+`delay<br> value of time between intervals - ???
 
 
 #### 2.3 Public functions
-start(time: number, delay: number = 0): Ticker
+`start(time: number, delay: number = 0): Ticker`<br>
 Creates and starts a ticker.
 Parameters:
-time - current time value within the ticker - ??
-delay - delay from starting point time to when  ticker is started
+`time`<br> current time value within the ticker - ??
+`delay`<br> delay from starting point time to when  ticker is started
 
-startInterval(time: number, interval: number): Ticker
+`startInterval(time: number, interval: number): Ticker`<br>
 Creates and starts a ticker object with specific intervals between ticks.
 Parameters:
-time - timestamp starting point time for the ticker
-interval - time between two ticks
+`time`<br> timestamp starting point time for the ticker
+`interval` - time between two ticks
 
-stop(withEnd: boolean = false)
+`stop(withEnd: boolean = false)`<br>
 Stops ticker and removes it from the list of tickers. 
 If the ticker has an end, also ends it.
 
-update(dt: number)
+`update(dt: number)`<br>
 Updates all started tickers and removes non-started.  
 
-destroy(ticker?: Ticker)
-blah
+`destroy(ticker?: Ticker)`<br>
+Stops a running ticker and unassigns the Ticker object from its current variable. 
 
-destroyMany(tickers: Ticker[])
-blaah
+`destroyMany(tickers: Ticker[])`<br>
+calls `destroy` function on a list of Ticker objects.
 
 
 #### 2.3 Private functions
-_update(dt: number)
+`_update(dt: number)`<br>
+blah
 
+## Questions
 
-
-Some content there.<br>
-
-##
-
-## 2.4 Questions
-
-? delay - delay from the starting point time to when ticker is started<br>
+? `delay` - delay from the starting point time to when ticker is started<br>
 - what is delay
 - what is the difference between 'stop' and 'end' events?
 
